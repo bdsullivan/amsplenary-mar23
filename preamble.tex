@@ -1,0 +1,42 @@
+%\usepackage{etex} % Fixes out-of-registers error. Probably some bad package.
+
+\usepackage[utf8x]{inputenc}
+%\usepackage{default}
+\usepackage[pdftex]{epsfig}
+\usepackage[table]{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{pdfpages} % Include other pdf files as slides
+
+\setbeamertemplate{navigation symbols}{}
+
+\renewcommand\sfdefault{phv}
+\renewcommand\familydefault{\sfdefault}
+\usetheme{default}
+\usepackage{color}
+\useoutertheme{default}
+
+\setbeamertemplate{frametitle}[center]
+\setbeamercolor{normal text}{bg=white, fg=black}
+\setbeamertemplate{items}[circle]
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+\setbeamertemplate{theorems}[normal font]
+
+\usefonttheme{professionalfonts}
+\usepackage[T1]{fontenc}
+
+\newcommand{\slide}[1]{%
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{pdfs/#1}}
+\begin{frame}[plain]\end{frame}
+}
+}
+
+\newcommand{\todoslide}[1]{%
+\begin{frame}[plain]
+	\centering\Large\textcolor{red}{TODO: #1}
+\end{frame}
+}
