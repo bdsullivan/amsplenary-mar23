@@ -1,1 +1,11 @@
 .DS_Store
+Makefile
+./pdfs/*.pdf
+*.aux
+*.log
+*.nav
+*.out
+*.toc
+*.swp
+*.snm
+presentation.pdf
