@@ -8,4 +8,5 @@ Makefile
 *.toc
 *.swp
 *.snm
+*.synctex.gz
 presentation.pdf
