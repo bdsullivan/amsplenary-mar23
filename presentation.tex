@@ -2,12 +2,60 @@
 \input{preamble}
 \begin{document}
 
-% Keynote. Aim for 40 minutes.
+% Keynote. Aim for 40 minutes (55 minutes for entire thing, including questions)
 
+%https://arxiv.org/abs/2112.10562 Our paper (version on Slack supercedes this; in press at EuJC - I'm supposed to be reviewing proofs this week)
+
+% Abstract. 
+%Over the last ten years, there has been significant work on adapting tools and techniques from structural graph algorithms for practical network analysis. One promising direction has arisen from the notion of bounded expansion, a broad notion of sparsity introduced by Nešetřil and Ossona de Mendez in 2012. Bounded expansion seems to exhibit a Goldilocks-like property of both encompassing many classes of real-world networks while still admitting (theoretically) efficient parameterized algorithms for many graph optimization problems. Taken together, this suggests that it may be a rich source of efficient algorithms for analyzing real-world networks. Further, bounded expansion includes many well-studied classes (e.g. bounded degree, H-minor-free, bounded crossing number) and can be characterized by – and thus relates – a plethora of independently interesting parameters (e.g. density of shallow minors, uniform quasi-wideness, and generalized coloring numbers). Many FPT algorithms take advantage of the inherent bounds on these parameters in bounded expansion classes in order to achieve polynomial runtimes. However, in order for these approaches to be practically useful, we must understand the computability of these parameters. Existing work implicitly relies on "good enough" approximations to claim the algorithms achieve fixed-parameter tractability – for example, a -approximation for -centered colorings. Unfortunately, the magnitude of the approximation factors inherently renders the approaches infeasible on real-world instances. In contrast, other parameters characterizing bounded expansion such as the generalized coloring numbers are not even known to be NP-hard to compute exactly. In this talk, we provide an overview of this space, including new results with Breen-McKay and Lavallee on the hardness and approximability of generalized coloring numbers – parameters of independent interest which were introduced by Kierstead and Yang in 2003. We also highlight several remaining open problems where affirmative answers could move the field significantly closer to achieving its practical potential.
+
+%Title - needs updating to match style (whatever that ends up being), have correct title, event, and date
+%One idea I had about "hard look at generalized coloring numbers" was that a diamond is hard, and can act as a prism which 
+%creates a rainbow -- maybe having one casting multicolor light onto a graph would be a neat title image? Low priority, all things considered. 
 \slide{title}
 
-% Acknowledgements
+%Bringing structural graph algorithms to real-world data analysis
+
+%Parameterized Complexity - quick recap of definitions/motivation
+
+%Lots of recent work, much of which is focused on sparsity of networks -- would be good to mention some work that's not bounded expansion and not associated with me here.  
+%https://arxiv.org/abs/2007.09768
+%https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
+
+
+%One key notion is bounded expansion - define in terms of shallow minors, mention Nesetril/Ossona de Mendez, show connection to other well-known structural graph classes via hierarchy, mention connections to uniform quasi-wideness, p-centered colorings. 
+
+%What can you do in bounded expansion classes? Mention theoretical results + Mandoline, SpaceGraphCats, etc. 
+
+%Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
+
+%Definition of degeneracy, admissibility and generalized coloring numbers 
+
+%Work of Kierstead & Yang; connections to game chromatic number; follow-ups with bounds in planar graphs, etc. 
+%I want to mention this paper: https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359
+%There's this line of work: https://arxiv.org/abs/1602.09052
+%Plenty of interest in the discrete math community: https://arxiv.org/abs/1907.10962 (graph powers), https://arxiv.org/abs/2201.09340 (planar)
+%Connection to twin-width, a recent hot topic: https://arxiv.org/abs/2104.09360
+
+%Recent work characterizing coloring numbers using Cops & Robbers-style game 
+%https://arxiv.org/abs/2302.00352
+
+%But are they computable? Until recently this was open. 
+
+%Negative result: NP-hard to compute (weak and strong, all radii)
+
+%End of the road? No - an approximation is good enough! 
+
+%Dvorak's approximation. 
+
+%New greedy algorithm based on admissibility gives improved approximation. This should be several slides. 
+
+%What's still open? 
+
+
+% Acknowledgements - have to decide whether to do at beginning or end 
 \slide{thanks}
 
+%Advertise for ACDA23? 
 
 \end{document}
