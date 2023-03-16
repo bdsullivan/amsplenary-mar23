@@ -56,23 +56,18 @@
 
 
 %One key notion is bounded expansion - define in terms of shallow minors, mention Nesetril/Ossona de Mendez, show connection to other well-known structural graph classes via hierarchy, mention connections to uniform quasi-wideness, p-centered colorings. 
+% -- define terminology "\nabla_r-bounded"
+\slide{be-shallow}
+\slide{be-shallow-A}
+\slide{be-shallow-B}
 
+% -- TODO: Replace BE by crossed-out shallow minor
 \slide{hierarchy-sparse}
+% -- Maybe something about BE being the "Goldilocks zone"?
+
+\todoslide{random model sparseness}
 
 %What can you do in bounded expansion classes? Mention theoretical results + Mandoline, SpaceGraphCats, etc. 
-
-%Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
-
-%Definition of degeneracy, admissibility and generalized coloring numbers 
-
-\slide{degeneracy}
-\slide{be-wcol}
-\slide{be-wcol-A}
-\slide{be-wcol-B}
-\slide{be-adm}
-\slide{be-adm-A}
-\slide{be-adm-B}
-
 \slide{be-overview}
 \slide{be-applications}
 
@@ -80,9 +75,17 @@
 %     computing a good wcol ordering is the first and maybe most important step
 %     for a fast algorithm
 % FR: We probably want to replace the "Magic hammer" by something more fitting 
+
+%Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
 \slide{wcol-counting}
 
-\todoslide{}
+%Definition of degeneracy, admissibility and generalized coloring numbers 
+
+\slide{degeneracy}
+\todoslide{strong coloring}
+\slide{be-wcol}
+\slide{be-wcol-A}
+\slide{be-wcol-B}
 
 %Work of Kierstead & Yang; connections to game chromatic number; follow-ups with bounds in planar graphs, etc. 
 %I want to mention this paper: https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359
@@ -94,7 +97,15 @@
 %https://arxiv.org/abs/2302.00352
 
 
+% Motivated from cops & robbers
+% -- "Interpolate" between degeneracy and td/tw
+% -- Degeneracy as "practical" parameter (netsci), td/tw as "theoretical"
+\todoslide{relationship to td/tw} 
+
+
 \todoslide{Section: Algorithmic questions}
+
+% FR: Degenracy algorithm somewhere here (animation)
 
 %But are they computable? Until recently this was open. 
 
@@ -102,9 +113,13 @@
 
 %End of the road? No - an approximation is good enough! 
 
-%Dvorak's approximation. 
+%Dvorak's approximation.
+% -- Just the approx. bounds (weak and strong)
 
-%New greedy algorithm based on admissibility gives improved approximation. This should be several slides. 
+%New greedy algorithm based on admissibility gives improved approximation. This should be several slides.
+\slide{be-adm}
+\slide{be-adm-A}
+\slide{be-adm-B} 
 
 %What's still open? 
 % FR: We don't have any bounds/algorithm specifically for _networks_
