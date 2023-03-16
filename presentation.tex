@@ -1,6 +1,34 @@
 \documentclass[xcolor=table]{beamer}
 \input{preamble}
 
+\usepackage[style=alphabetic]{biblatex}
+\AtBeginBibliography{\footnotesize}
+
+\DeclareLabelalphaTemplate{
+	\labelelement{
+		\field[strwidth=3,strside=left,names=1,noalphaothers=true]{labelname}
+	}
+	\labelelement{
+		\field[strwidth=2,strside=right]{year}
+	}
+	\labelelement{
+		\literal{\nobreakspace}
+	}
+	\labelelement{
+			\field[]{shorttitle}
+	}   
+}
+\addbibresource{biblio.bib}
+
+
+% \DeclareLabelalphaTemplate{
+% 	\labelelement{
+% 		\field[varwidthnorm]{labelname}
+% 	}
+% 	\labelelement{
+% 		\literal{--}
+% 	}
+% }
 
 \begin{document}
 
@@ -137,5 +165,13 @@
 \slide{thanks}
 
 %Advertise for ACDA23? 
+
+
+% Bibliography
+\setbeamercolor{background canvas}{bg=talk_bg}
+\begin{frame}
+	\cite{flipwidth}
+	\printbibliography
+\end{frame}
 
 \end{document}
