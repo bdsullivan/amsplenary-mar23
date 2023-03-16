@@ -15,8 +15,6 @@
 \slide{title}
 
 
-% FR: Things that I think are missing currently:
-% -- wide gap between theoretical result and real-world data analysis
 
 
 % [10 mins] on FPT, structural graph theory
@@ -40,7 +38,10 @@
 
 \todoslide{Section: Sparse graph theory}
 
+
 %Bringing structural graph algorithms to real-world data analysis
+
+%% Wide gap between theoretical result and real-world data analysis
 
 %Parameterized Complexity - quick recap of definitions/motivation
 \slide{fpt}
@@ -78,9 +79,10 @@
 %Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
 \slide{wcol-counting}
 
-%Definition of degeneracy, admissibility and generalized coloring numbers 
 
-\slide{degeneracy}
+\slide{Section: Generalized Coloring Numbers - what they are and why you should care, beyond BE}
+%Definition of generalized coloring numbers 
+
 \slide{be-col}
 \slide{be-col-A}
 \slide{be-col-B}
@@ -88,26 +90,87 @@
 \slide{be-wcol}
 \slide{be-wcol-A}
 \slide{be-wcol-B}
+%scolr(G) ≤ wcolr(G) ≤ (scolr(G))r.
 
-%Work of Kierstead & Yang; connections to game chromatic number; follow-ups with bounds in planar graphs, etc. 
-%I want to mention this paper: https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359
-%There's this line of work: https://arxiv.org/abs/1602.09052
-%Plenty of interest in the discrete math community: https://arxiv.org/abs/1907.10962 (graph powers), https://arxiv.org/abs/2201.09340 (planar)
-%Connection to twin-width, a recent hot topic: https://arxiv.org/abs/2104.09360
+\todoslide{origins of generalized coloring numbers}
+%Originally introduced by Kierstead & Yang (Order 2003)
+%Generalizes coloring number (relates to chromatic number, list coloring)
+%Connections to game chromatic number
 
+% For a graph G, σ ∈ Π and x ∈ V , let col(G,σ,x) be one more than the number of neighbors y ∈ NG(x) with y <σ x. %The coloring number col(G) of G is the least integer s such that every subgraph of G contains a vertex of degree less than s. 
+%The coloring number of G, denoted col(G), is defined by
+%col(G) = min max col(G, σ, x). σ∈Π x∈V
+%In recent terminology, the coloring number of a graph is one more than its degeneracy; under an older definition of degeneracy they were the same. Greedily coloring the vertices of G in an ordering that witnesses its coloring number, shows that
+%χ(G) ≤ ch(G) ≤ col(G),
+%where χ(G) and ch(G) denote the chromatic and list chromatic number of G, respectively.
+
+%Do I need degeneracy here? 
+%\slide{degeneracy}
+
+% If the vertices of G are colored greedily so that no vertex v receives the same color as any other vertex in S2[G,σ,v], then the resulting coloring is an acyclic coloring, so
+%cha(G) ≤ scol2(G),
+%If the vertices of G are colored greedily so that no vertex v receives the same color as any vertex in W2[G,σ,v], then the resulting coloring is a star coloring, so chs(G) ≤ wcol2(G),
+
+%The r-ordering game is played on a graph G by two players, Alice and Bob. The game lasts for n = |G| turns. The players take turns choosing unchosen vertices with Alice playing first until there are no unchosen vertices left. This creates an ordering σ ∈ Π(G) of G, where vi is the vertex chosen at the i-th turn and v1 <σ v2 <σ ··· <σ vn. The score of the game is scolr(G,σ). Alice’s goal is to minimize the score while Bob’s goal is to maximize the score. The game r-coloring number of G, denoted gcolr(G), is the least s such that Alice can always achieve a score of at most s, regardless of how Bob plays.
+%All graphs G satisfy gcolr(G) ≤ 3(wcol2r(G))^2 ≤ 3(scol2r(G))^{4r} for all r.
+
+\todoslide{uniform orderings}
+%Slide idea: one ring to rule them all (back to the diamond from the title slide?)
+% Uniform Orderings 
+%https://arxiv.org/abs/1907.12149
+ %https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359 
+ % van den Heuvel, Kierstead, EuJC 2021
+
+% An obvious question concerning generalized coloring numbers is whether an ordering that is “good” for one distance r is also “good” for a different distance r′. 
+%this need not be the case: in Example 2.1 we will show that for all r, r′ ∈ N with r ̸= r′, there exists a graph G such that for all σ ∈ Π(G) either scolr(G) < scolr(G, σ) or scolr′ (G) < scolr′ (G, σ).
+%Question of Dvorak: Is it true that for all functions c : N → N, there exists a function c∗ : N → N, such that for every graph G ∈ Gc, there exists an ordering σ∗ ∈ Π(G) such that scolr(G,σ∗) ≤ c∗(r) for all r ∈ N? (Kreutzer et al conjectured yes)
+% Main result: For any graph G, there exists an ordering σ∗ of G such that for all r ∈ N we have scolr(G, σ∗) ≤ (2r + 1) · 􏰁scol2r(G)􏰂4r.
+
+% May not include this: Connections to posets 
+% Streib and Trotter [24] proved that every poset whose cover graph is planar, has dimension bounded by a function of its height. Then Joret et al. [9] used generalized coloring numbers to prove that every monotone graph class G is nowhere dense if and only if for every integer h ≥ 1 and real number epsilon > 0, every n-element poset of height at most h whose cover graph is in G has dimension O(n^epsilon).
+
+\todoslide{bounds for special classes}
+%Plenty of interest in the discrete math community: 
+%https://arxiv.org/abs/1907.10962 (Kierstead, Yang, Yi, graph powers, Discrete Math 2020)
+%https://www.sciencedirect.com/science/article/abs/pii/S0012365X19303905
+%https://arxiv.org/abs/2102.10061 (Joret & Micek; wcol only - treewidth Theta(r^(k−1) log r)and planar; Electronic Journal of Combinatorics 2022) https://www.combinatorics.org/ojs/index.php/eljc/article/view/v29i1p60
+%https://arxiv.org/abs/2201.09340 (Nederlov, Pilipczuk, Wegrzycki - planar via Koebe orderings/coin models ArXiv 2022), 
+% https://arxiv.org/abs/1602.09052 (van den Heuvel et al; excluding a fixed minor - linear and polynomial bounds including colr(G)≤5r+1  for planar; EuJC 2017) https://www.sciencedirect.com/science/article/pii/S0195669817300938
+
+
+\todoslide{twinwidth}
+%Obvious slide image is twins (platypi again?)
+%https://arxiv.org/abs/2104.09360 
+%https://www.sciencedirect.com/science/article/abs/pii/S0012365X21004593
+%Dreier et al Discrete Math 2022
+%twin-width graph parameter, defined by Bonnet, Kim, Thomassé and Watrigant FOCS 2020 as a generalization of a width invariant for classes of permutations defined by Guillemot and Marx SODA 2014. Recently work on structural and algorithmic questions such as FPT model checking [5], graph enumeration, graph coloring, matrices and ordered graphs, and transductions of permutations.
+% Known: graph class with bounded twin-width excludes some biclique as a subgraph if and only if it has bounded expansion
+% Also known (Bonnet et al SODA 2021): For every integer r there exists a function fr : N × N → N such that if G is a graph with twin-width t and no Ks,s-subgraph, then we have wcolr(G) ≤ fr(t,s). Similar bounds also exist for scolr and admr. No indication of how to compute such binding functions.
+% Main result: prove that a graph G with no Ks,s-subgraph and twin-width d has admr, scolr and wcolr bounded from above by an exponential function of r, and that we can construct graphs achieving such a dependency in r. In particular, scolr(G) ≤ (d^r + 3)s (Theorem 2). On the other hand, one can choose G such that scolr(G) ≥ (d−4)^rs 
+
+\todoslide{cops and robbers}
+%Slide image: platypus robber, maybe with a speed limit sign for the variant??
 %Recent work characterizing coloring numbers using Cops & Robbers-style game 
 %https://arxiv.org/abs/2302.00352
+% Toruńczyk ArXiv 2023 
+% Original game: The robber stands on a vertex of the graph, and can at any time run at great speed to any other vertex along a path of the graph. He is not permitted to run through a cop, however. There are k cops, each of whom at any time either stands on a vertex or is in a helicopter (that is, is temporarily removed from the game). The objective of the player controlling the movement of the cops is to land a cop via helicopters on the vertex occupied by the robber, and the robber’s objective is to elude capture. (The point of the helicopters is that cops are not constrained to move along paths of the graph – they move from vertex to vertex arbitrarily.) The robber can see the helicopter approaching its landing spot and may run to a new vertex before the helicopter actually lands. 
+%Original result: the least number of cops needed to catch a robber on a graph G is equal to one plus the treewidth of G. min-max theorem: either the cops have a winning strategy of a particularly simple, monotone form, which can be described by a tree decomposition of the graph, or otherwise, the robber has a winning strategy of a particularly simple form, called a haven.
 
+%Cop-Width Game: robber runs at speed r, for some fixed r ∈ N ∪ {∞}. That is, in each round, after the cops have taken off in their helicopters to their new positions, which are known to the robber, and before the helicopters have landed, the robber may traverse a path of length at most r that does not run through a cop that remains on the ground (he may also stay put). We call this game the cop-width game with radius r and width k, if there are k cops, and the robber can run at speed r. Obs: copwidth1(G) = degeneracy(G) + 1. (note to self: minimax thm comes from fact that every graph G is either d-degenerate, or it has a subgraph H in which every vertex has degree larger than d.)
+%Main Result: admr (G) + 1 leq copwidthr (G) leq wcol2r (G) + 1.
+% There is a variant with exact min-max theorem (cops announce moves first)
+% Leads to admr (G) + 1 leq  copwidthr′ (G) leq  scolr (G) + 1
+% Basically also studied in Richerby & Thilikos WG 2008 and Limnios et al TCS 2020 but without connections to coloring numbers 
 
 % Motivated from cops & robbers
 % -- "Interpolate" between degeneracy and td/tw
 % -- Degeneracy as "practical" parameter (netsci), td/tw as "theoretical"
 \todoslide{relationship to td/tw} 
 
-
 \todoslide{Section: Algorithmic questions}
 
 % FR: Degeneracy algorithm somewhere here (animation)
+% BS: note that this gives the cops strategy in the copwidth1 case (v + its d back-nbrs)
 \slide{degeneracy-computation}
 \slide{degeneracy-computation-A}
 \slide{degeneracy-computation-B}
@@ -123,13 +186,19 @@
 % -- Just the approx. bounds (weak and strong)
 
 %New greedy algorithm based on admissibility gives improved approximation. This should be several slides.
+
+% Definition of Admissibility 
 \slide{be-adm}
 \slide{be-adm-A}
 \slide{be-adm-B} 
 
+\todoslide{Open Problems}
 %What's still open? 
+% Any Constant-factor approximation (get rid of the k)
 % FR: We don't have any bounds/algorithm specifically for _networks_
-
+% Are game coloring numbers algorithmicall useful? (only known result is for a Bollobas-Eldridge type packing problem via Kierstead and Kostochka)
+% What is the asymptotics of the maximum of wcolr(G) when G is planar? It
+%is known to be Ω(r2 log r) and O(r3). Joret et al conjecture Θ(r^2 log r); Pilipczuk et al think maybe via Koebe orderings - is it true  wcold(G, 􏰒) \leq  d^3 · ln^O(1) d for every Koebe order?
 
 % Acknowledgements - have to decide whether to do at beginning or end 
 \slide{thanks}
