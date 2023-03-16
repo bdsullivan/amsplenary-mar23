@@ -40,7 +40,7 @@
 %Over the last ten years, there has been significant work on adapting tools and techniques from structural graph algorithms for practical network analysis. One promising direction has arisen from the notion of bounded expansion, a broad notion of sparsity introduced by Nešetřil and Ossona de Mendez in 2012. Bounded expansion seems to exhibit a Goldilocks-like property of both encompassing many classes of real-world networks while still admitting (theoretically) efficient parameterized algorithms for many graph optimization problems. Taken together, this suggests that it may be a rich source of efficient algorithms for analyzing real-world networks. Further, bounded expansion includes many well-studied classes (e.g. bounded degree, H-minor-free, bounded crossing number) and can be characterized by – and thus relates – a plethora of independently interesting parameters (e.g. density of shallow minors, uniform quasi-wideness, and generalized coloring numbers). Many FPT algorithms take advantage of the inherent bounds on these parameters in bounded expansion classes in order to achieve polynomial runtimes. However, in order for these approaches to be practically useful, we must understand the computability of these parameters. Existing work implicitly relies on "good enough" approximations to claim the algorithms achieve fixed-parameter tractability – for example, a -approximation for -centered colorings. Unfortunately, the magnitude of the approximation factors inherently renders the approaches infeasible on real-world instances. In contrast, other parameters characterizing bounded expansion such as the generalized coloring numbers are not even known to be NP-hard to compute exactly. In this talk, we provide an overview of this space, including new results with Breen-McKay and Lavallee on the hardness and approximability of generalized coloring numbers – parameters of independent interest which were introduced by Kierstead and Yang in 2003. We also highlight several remaining open problems where affirmative answers could move the field significantly closer to achieving its practical potential.
 
 %Title - needs updating to match style (whatever that ends up being), have correct title, event, and date
-%One idea I had about "hard look at generalized coloring numbers" was that a diamond is hard, and can act as a prism which 
+%TODO: One idea I had about "hard look at generalized coloring numbers" was that a diamond is hard, and can act as a prism which 
 %creates a rainbow -- maybe having one casting multicolor light onto a graph would be a neat title image? Low priority, all things considered. 
 \slide{title}
 
@@ -57,6 +57,7 @@
 %   	> Cops & Robbers! 
 % [10 mins] new results
 %   -- hard
+%	-- greedy approximation 
 % [3-5 mins] open questions, at least one per area 
 %		> algorithms: constant factor approx., e.g. independent of wcol_r even 
 %		  for just r=2)
@@ -72,14 +73,17 @@
 %Bringing structural graph algorithms to real-world data analysis
 
 %% Wide gap between theoretical result and real-world data analysis
+% Planets analogy - need to add microbes to bioinformatics
 
 %Parameterized Complexity - quick recap of definitions/motivation
+% TODO -- Let's use the SLC Whale 'Out of the Blue' as the new sculpture! It's really controversial here, and a great talking point.
 \slide{fpt}
 
 %Lots of recent work, much of which is focused on sparsity of networks -- would be good to mention some work that's not bounded expansion and not associated with me here.  
 %https://arxiv.org/abs/2007.09768
 %https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
-% FR: Treewidth of real-world networks (https://arxiv.org/pdf/1901.06862.pdf)
+% FR: Treewidth of real-world networks (https://arxiv.org/pdf/1901.06862.pdf) and https://ieeexplore.ieee.org/document/6729484 
+
 % FR: Cute paper on planar representations of (non-planar) street networks, 
 %     this one is a bit more social-sciency (https://journals.sagepub.com/doi/pdf/10.1177/2399808318802941?casa_token=AYfYJzbcxRIAAAAA:Hoi86T72xpKBlK_ntr-5pQRhxzQ6hzXrM8rUiFjYKy_FY1soOAWwSpQbqKZ9hpv12UWRbvSWn5I)
 % FR: Planarization of biological networks (https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9669815&casa_token=Q7pDQ0KMis4AAAAA:p7lFIY2FZ3wiJVpzIOAMLFaDS2SaJ97du4Q1vRfRaT75KozwMlizUXzf8Zrf94mC1LZYnpqyOIc&tag=1)
@@ -93,8 +97,9 @@
 
 % -- TODO: Replace BE by crossed-out shallow minor
 \slide{hierarchy-sparse}
-% -- Maybe something about BE being the "Goldilocks zone"?
+% -- Maybe something about BE being the "Goldilocks zone"? Yes! call-back to planets analogy in motivation section.
 
+% Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
 \slide{random-models}
 
 %What can you do in bounded expansion classes? Mention theoretical results + Mandoline, SpaceGraphCats, etc. 
@@ -122,6 +127,9 @@
 \slide{be-wcol-B}
 %scolr(G) ≤ wcolr(G) ≤ (scolr(G))r.
 
+% See SlideSketches for distillation and imagery suggestions on all of these. 
+
+%TODO: decide if degeneracy definition is needed.
 \todoslide{Origin Story}
 %Originally introduced by Kierstead & Yang (Order 2003)
 %Generalizes coloring number (relates to chromatic number, list coloring)
@@ -141,13 +149,20 @@
 %cha(G) ≤ scol2(G),
 %If the vertices of G are colored greedily so that no vertex v receives the same color as any vertex in W2[G,σ,v], then the resulting coloring is a star coloring, so chs(G) ≤ wcol2(G),
 
-\todoslide{It's all a game...}
-
+\todoslide{It's all fun and games...}
 %The r-ordering game is played on a graph G by two players, Alice and Bob. The game lasts for n = |G| turns. The players take turns choosing unchosen vertices with Alice playing first until there are no unchosen vertices left. This creates an ordering σ ∈ Π(G) of G, where vi is the vertex chosen at the i-th turn and v1 <σ v2 <σ ··· <σ vn. The score of the game is scolr(G,σ). Alice’s goal is to minimize the score while Bob’s goal is to maximize the score. The game r-coloring number of G, denoted gcolr(G), is the least s such that Alice can always achieve a score of at most s, regardless of how Bob plays.
 %All graphs G satisfy gcolr(G) ≤ 3(wcol2r(G))^2 ≤ 3(scol2r(G))^{4r} for all r.
 
+\todoslide{To Planarity and Beyond!}
+% https://www.sciencedirect.com/science/article/pii/S0012365X21003447 (Almuhim, Kierstead 2022 Discrete Math; may not include this, but weak-2 on planar has been a big push: best known is 23 now -> star list chromatic number; conjecture is 18)
+%https://arxiv.org/abs/2201.09340 (Nederlov, Pilipczuk, Wegrzycki - planar via Koebe orderings/coin models ArXiv 2022), 
+%https://www.sciencedirect.com/science/article/abs/pii/S0012365X19303905
+% https://arxiv.org/abs/1602.09052 (van den Heuvel et al; excluding a fixed minor - linear and polynomial bounds including colr(G)≤5r+1  for planar; EuJC 2017) https://www.sciencedirect.com/science/article/pii/S0195669817300938
+%https://arxiv.org/abs/2102.10061 (Joret & Micek; wcol only - treewidth Theta(r^(k−1) log r)and planar; Electronic Journal of Combinatorics 2022) https://www.combinatorics.org/ojs/index.php/eljc/article/view/v29i1p60
+%https://arxiv.org/abs/1907.10962 (Kierstead, Yang, Yi, graph powers, Discrete Math 2020)
+
+
 \todoslide{One Ring to Rule Them}
-%Slide idea: one ring to rule them all (back to the diamond from the title slide?)
 % Uniform Orderings 
 %https://arxiv.org/abs/1907.12149
  %https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359 
@@ -155,23 +170,13 @@
 
 % An obvious question concerning generalized coloring numbers is whether an ordering that is “good” for one distance r is also “good” for a different distance r′. 
 %this need not be the case: in Example 2.1 we will show that for all r, r′ ∈ N with r ̸= r′, there exists a graph G such that for all σ ∈ Π(G) either scolr(G) < scolr(G, σ) or scolr′ (G) < scolr′ (G, σ).
-%Question of Dvorak: Is it true that for all functions c : N → N, there exists a function c∗ : N → N, such that for every graph G ∈ Gc, there exists an ordering σ∗ ∈ Π(G) such that scolr(G,σ∗) ≤ c∗(r) for all r ∈ N? (Kreutzer et al conjectured yes)
-% Main result: For any graph G, there exists an ordering σ∗ of G such that for all r ∈ N we have scolr(G, σ∗) ≤ (2r + 1) · 􏰁scol2r(G)􏰂4r.
+%Question of Dvorak: Is it true that for all functions c : N → N, there exists a function c∗ : N → N, such that for every graph G with scol at most c(r), there exists an ordering σ∗ ∈ Π(G) such that scolr(G,σ∗) ≤ c∗(r) for all r ∈ N? (Kreutzer et al conjectured yes)
+% Main result: For any graph G, there exists an ordering σ∗ of G such that for all r ∈ N we have scolr(G, σ∗) ≤ (2r + 1)(scol2r(G))^4r.
 
-% May not include this: Connections to posets 
+% Not planning to include: Connections to posets 
 % Streib and Trotter [24] proved that every poset whose cover graph is planar, has dimension bounded by a function of its height. Then Joret et al. [9] used generalized coloring numbers to prove that every monotone graph class G is nowhere dense if and only if for every integer h ≥ 1 and real number epsilon > 0, every n-element poset of height at most h whose cover graph is in G has dimension O(n^epsilon).
 
-\todoslide{bounds for special classes}
-%Plenty of interest in the discrete math community: 
-%https://arxiv.org/abs/1907.10962 (Kierstead, Yang, Yi, graph powers, Discrete Math 2020)
-%https://www.sciencedirect.com/science/article/abs/pii/S0012365X19303905
-%https://arxiv.org/abs/2102.10061 (Joret & Micek; wcol only - treewidth Theta(r^(k−1) log r)and planar; Electronic Journal of Combinatorics 2022) https://www.combinatorics.org/ojs/index.php/eljc/article/view/v29i1p60
-%https://arxiv.org/abs/2201.09340 (Nederlov, Pilipczuk, Wegrzycki - planar via Koebe orderings/coin models ArXiv 2022), 
-% https://arxiv.org/abs/1602.09052 (van den Heuvel et al; excluding a fixed minor - linear and polynomial bounds including colr(G)≤5r+1  for planar; EuJC 2017) https://www.sciencedirect.com/science/article/pii/S0195669817300938
-
-
-\todoslide{twinwidth}
-%Obvious slide image is twins (platypi again?)
+\todoslide{Twinwidth (twice the fun, half the sleep)}
 %https://arxiv.org/abs/2104.09360 
 %https://www.sciencedirect.com/science/article/abs/pii/S0012365X21004593
 %Dreier et al Discrete Math 2022
@@ -180,8 +185,7 @@
 % Also known (Bonnet et al SODA 2021): For every integer r there exists a function fr : N × N → N such that if G is a graph with twin-width t and no Ks,s-subgraph, then we have wcolr(G) ≤ fr(t,s). Similar bounds also exist for scolr and admr. No indication of how to compute such binding functions.
 % Main result: prove that a graph G with no Ks,s-subgraph and twin-width d has admr, scolr and wcolr bounded from above by an exponential function of r, and that we can construct graphs achieving such a dependency in r. In particular, scolr(G) ≤ (d^r + 3)s (Theorem 2). On the other hand, one can choose G such that scolr(G) ≥ (d−4)^rs 
 
-\todoslide{cops and robbers}
-%Slide image: platypus robber, maybe with a speed limit sign for the variant??
+\todoslide{Cops and Robbers}
 %Recent work characterizing coloring numbers using Cops & Robbers-style game 
 %https://arxiv.org/abs/2302.00352
 % Toruńczyk ArXiv 2023 
@@ -210,6 +214,7 @@
 
 %But are they computable? Until recently this was open. 
 
+% Cite Breen-McKay, Lavallee, Sullivan, EuJC 2023 (In Press)
 %Negative result: NP-hard to compute (weak and strong, all radii)
 
 %End of the road? No - an approximation is good enough! 
@@ -233,6 +238,7 @@
 %is known to be Ω(r2 log r) and O(r3). Joret et al conjecture Θ(r^2 log r); Pilipczuk et al think maybe via Koebe orderings - is it true  wcold(G, 􏰒) \leq  d^3 · ln^O(1) d for every Koebe order?
 
 % Acknowledgements - have to decide whether to do at beginning or end 
+% TODO: Update this to match talk.
 \slide{thanks}
 
 %Advertise for ACDA23? 
