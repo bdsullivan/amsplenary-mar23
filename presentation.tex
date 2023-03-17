@@ -74,7 +74,8 @@
 % Reference slide!
 %  -- References as [Name, Year, Short venue code]
 
-\todoslide{Section: Sparse graph theory}
+% \todoslide{Section: Sparse graph theory}
+\slide{title-sparsity}
 %Bringing structural graph algorithms to real-world data analysis
 
 
@@ -152,7 +153,8 @@
 \todoslide{SpaceGraphCats}
 
 %BS: I'm not sold on these divider slides given the talk organization, but we'll see; maybe you have some idea for what they could look like.
-\todoslide{Section: Generalized Coloring Numbers - what they are and why you should care, beyond BE}
+\slide{title-coloring-numbers}
+% \todoslide{Section: Generalized Coloring Numbers - what they are and why you should care, beyond BE}
 
 %Definition of generalized coloring numbers 
 %Strong
@@ -244,7 +246,7 @@
 \slide{col-wcol-td-tw} 
 
 %BS: Still not sold, but reserving judgement.
-\todoslide{Section: Algorithmic questions}
+\slide{title-algorithmic}
 
 % FR: Degeneracy algorithm somewhere here (animation)
 % BS: note that this gives the cops strategy in the copwidth1 case (v + its d back-nbrs)
@@ -257,20 +259,17 @@
 \slide{hardness}
 %Negative result: NP-hard to compute (weak and strong, all radii)
 
-\todoslide{When all else fails, approximate!}
+% \todoslide{When all else fails, approximate!}
+\slide{order-approx}
 %End of the road? No - an approximation is good enough! 
 %Point out that all the poly-time algorithms work just as well with any approximation (though the runtimes really suffer)
 % Dvorak's bounds (weak and strong)
+fo
 
-\todoslide{A Greedy Approach}
 % If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 
-% Definition of Admissibility - do I really need these / is this the right place for them? Probably, since we use a disjoint set of shortest paths in order to get our approximation to go through.
-\slide{be-adm}
-\slide{be-adm-A}
-\slide{be-adm-B} 
-
-\todoslide{When all fails, estimate!}
+% \todoslide{When all fails, estimate!}
+\slide{order-algo-estimate}
 %We use estimated backconnectivity -- restrict to shortest r-qualifying paths.
 %Mention that we get Catalan numbers?
 % Use same visuals as degeneracy slides
@@ -286,6 +285,7 @@
 % What is the asymptotics of the maximum of wcolr(G) when G is planar? It
 %is known to be Ω(r2 log r) and O(r3). Joret et al conjecture Θ(r^2 log r); Pilipczuk et al think maybe via Koebe orderings - is it true  wcold(G, 􏰒) \leq  d^3 · ln^O(1) d for every Koebe order?
 
+\slide{thanks-end}
 
 %Advertise for ACDA23? Maybe on a "Thanks" slide?
 %This is a slide I can make if I decide I want it.
