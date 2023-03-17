@@ -79,14 +79,22 @@
 % TODO -- Let's use the SLC Whale 'Out of the Blue' as the new sculpture! It's really controversial here, and a great talking point.
 \slide{fpt}
 
-%Lots of recent work, much of which is focused on sparsity of networks -- would be good to mention some work that's not bounded expansion and not associated with me here.  
-%https://arxiv.org/abs/2007.09768
-%https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
-% FR: Treewidth of real-world networks (https://arxiv.org/pdf/1901.06862.pdf) and https://ieeexplore.ieee.org/document/6729484 
+%Lots of interest in using structure and sparsity to design efficient algorithms, but also lots of evidence that existing parameters are typically too big in realistic networks. 
 
+%Treewidth 
+%This paper argues that treewidth is super useful in biology, but networks have prohibitively high treewidth.
+%https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
+% FR: Treewidth of database networks (https://arxiv.org/pdf/1901.06862.pdf) and https://ieeexplore.ieee.org/document/6729484 (or Internet Math version) on social networks 
+
+%Planarity 
 % FR: Cute paper on planar representations of (non-planar) street networks, 
 %     this one is a bit more social-sciency (https://journals.sagepub.com/doi/pdf/10.1177/2399808318802941?casa_token=AYfYJzbcxRIAAAAA:Hoi86T72xpKBlK_ntr-5pQRhxzQ6hzXrM8rUiFjYKy_FY1soOAWwSpQbqKZ9hpv12UWRbvSWn5I)
 % FR: Planarization of biological networks (https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9669815&casa_token=Q7pDQ0KMis4AAAAA:p7lFIY2FZ3wiJVpzIOAMLFaDS2SaJ97du4Q1vRfRaT75KozwMlizUXzf8Zrf94mC1LZYnpqyOIc&tag=1)
+
+%Near-Cliques in c-closed classes (Jain et al) 
+%https://arxiv.org/abs/2007.09768
+
+
 % FR: Pal, Irene and I did some work on "Harmless Set" which is inspired by networks questiosn https://arxiv.org/abs/2111.11834
 
 
@@ -96,13 +104,15 @@
 \slide{be-shallow-B}
 
 % -- TODO: Replace BE by crossed-out shallow minor
+% -- TODO: Can we use a labelled version (I found the hierarchy-labeled.svg in my files)
 \slide{hierarchy-sparse}
 % -- Maybe something about BE being the "Goldilocks zone"? Yes! call-back to planets analogy in motivation section.
 
-% Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
+%TODO: Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
 \slide{random-models}
 
 %What can you do in bounded expansion classes? Mention theoretical results + Mandoline, SpaceGraphCats, etc. 
+%TODO: Fix citation to standard style for this talk 
 \slide{be-overview}
 \slide{be-applications}
 
@@ -112,8 +122,13 @@
 % FR: We probably want to replace the "Magic hammer" by something more fitting 
 
 %Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
+%TODO: Add citation 
 \slide{wcol-counting}
 
+%One slide on using bounded-expansion + domsets for gene neighborhoods. I may have something - will look. 
+% Starting point is spacegraphcats.svg - needs retitling, maybe another small tweak, but I'm just going to use it to point to real application work (and Taylor's new preprint on IBD is super cool).
+% TODO: Add citation 
+\todoslide{SpaceGraphCats}
 
 \todoslide{Section: Generalized Coloring Numbers - what they are and why you should care, beyond BE}
 %Definition of generalized coloring numbers 
