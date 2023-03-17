@@ -5,6 +5,9 @@
 \usepackage{lato} % FR: You might have to install this!
 
 
+%TODO:BS: Find where you used vanH for a citation and fix it to van
+
+
 \AtBeginBibliography{\tiny}
 
 \DeclareLabelalphaTemplate{
@@ -36,8 +39,7 @@
 \begin{document}
 
 % Keynote. Aim for 40 minutes (55 minutes for entire thing, including questions)
-
-%https://arxiv.org/abs/2112.10562 Our paper (version on Slack supercedes this; in press at EuJC - I'm supposed to be reviewing proofs this week)
+% Our paper: https://arxiv.org/abs/2112.10562 
 
 % Abstract. 
 %Over the last ten years, there has been significant work on adapting tools and techniques from structural graph algorithms for practical network analysis. One promising direction has arisen from the notion of bounded expansion, a broad notion of sparsity introduced by Nešetřil and Ossona de Mendez in 2012. Bounded expansion seems to exhibit a Goldilocks-like property of both encompassing many classes of real-world networks while still admitting (theoretically) efficient parameterized algorithms for many graph optimization problems. Taken together, this suggests that it may be a rich source of efficient algorithms for analyzing real-world networks. Further, bounded expansion includes many well-studied classes (e.g. bounded degree, H-minor-free, bounded crossing number) and can be characterized by – and thus relates – a plethora of independently interesting parameters (e.g. density of shallow minors, uniform quasi-wideness, and generalized coloring numbers). Many FPT algorithms take advantage of the inherent bounds on these parameters in bounded expansion classes in order to achieve polynomial runtimes. However, in order for these approaches to be practically useful, we must understand the computability of these parameters. Existing work implicitly relies on "good enough" approximations to claim the algorithms achieve fixed-parameter tractability – for example, a -approximation for -centered colorings. Unfortunately, the magnitude of the approximation factors inherently renders the approaches infeasible on real-world instances. In contrast, other parameters characterizing bounded expansion such as the generalized coloring numbers are not even known to be NP-hard to compute exactly. In this talk, we provide an overview of this space, including new results with Breen-McKay and Lavallee on the hardness and approximability of generalized coloring numbers – parameters of independent interest which were introduced by Kierstead and Yang in 2003. We also highlight several remaining open problems where affirmative answers could move the field significantly closer to achieving its practical potential.
@@ -97,13 +99,19 @@
 \slide{unreal-structure-b}
 %Treewidth 
 %This paper argues that treewidth is super useful in biology, but networks have prohibitively high treewidth.
-%https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
-% FR: Treewidth of database networks (https://arxiv.org/pdf/1901.06862.pdf) and https://ieeexplore.ieee.org/document/6729484 (or Internet Math version) on social networks 
+%\cite{tree-diet}
+%https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z 
+% FR: Treewidth of database networks (https://arxiv.org/pdf/1901.06862.pdf) 
+%\cite{treewidth-db}
+%and https://ieeexplore.ieee.org/document/6729484 (or Internet Math version) on social networks 
+%\cite{tree-like} * 
 
 %Planarity 
 % FR: Cute paper on planar representations of (non-planar) street networks, 
 %     this one is a bit more social-sciency (https://journals.sagepub.com/doi/pdf/10.1177/2399808318802941?casa_token=AYfYJzbcxRIAAAAA:Hoi86T72xpKBlK_ntr-5pQRhxzQ6hzXrM8rUiFjYKy_FY1soOAWwSpQbqKZ9hpv12UWRbvSWn5I)
+%\cite{planar-street}
 % FR: Planarization of biological networks (https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9669815&casa_token=Q7pDQ0KMis4AAAAA:p7lFIY2FZ3wiJVpzIOAMLFaDS2SaJ97du4Q1vRfRaT75KozwMlizUXzf8Zrf94mC1LZYnpqyOIc&tag=1)
+%\cite{planar-bio}
 
 
 % BS: Not sure these fit in the current pitch?
@@ -115,16 +123,20 @@
 % TODO:FR: Highlight Bounded Expansion & put it in the "Goldilocks Zone" 
 \slide{hierarchy-sparse}
 
+% TODO:BS: Probably needs a citation to the first of the BE papers.
 %Recent work has shown that bounded expansion may be in the ``goldilocks'' zone  - define in terms of shallow minors, mention Nesetril/Ossona de Mendez, show connection to other well-known structural graph classes via hierarchy, mention connections to uniform quasi-wideness, p-centered colorings. 
 \slide{be-shallow}
+%\cite{Nesetril2008}
 \slide{be-shallow-A}
 \slide{be-shallow-B}
 
 %Evidence that BE exists in random graph models 
 \slide{random-models}
+%\cite{Demaine2019} *
 
 %Algorithmically useful, lots of characterizations
 \slide{be-overview}
+%\cite{Nes2012}
 \slide{be-applications}
 
 %Steps towards Practice:
@@ -186,14 +198,11 @@
 
 %TODO: Beautify
 \slide{twinwidth}
-%https://arxiv.org/abs/2104.09360 
-%https://www.sciencedirect.com/science/article/abs/pii/S0012365X21004593
-%Dreier et al Discrete Math 2022
+%\cite{Dreier2022}
 %Observe (out loud) that recently work addresses many structural and algorithmic questions such as FPT model checking, graph enumeration, graph coloring, matrices and ordered graphs, and transductions of permutations.
 %Similar exponential upper bounds for wcol and adm. 
 
 
-%https://arxiv.org/abs/2302.00352
 %TODO:BDS: make sure you understand the rules of the game.
 %Cop-Width Game: robber runs at speed r, for some fixed r ∈ N ∪ {∞}. That is, in each round, after the cops have taken off in their helicopters to their new positions ***which are known to the robber***, and before the helicopters have landed, the robber may traverse a path of length at most r that does not run through a cop that remains on the ground (he may also stay put). We call this game the cop-width game with radius r and width k, if there are k cops, and the robber can run at speed r. Obs: copwidth1(G) = degeneracy(G) + 1. (note to self: minimax thm comes from fact that every graph G is either d-degenerate, or it has a subgraph H in which every vertex has degree larger than d.)
 % There is a variant with exact min-max theorem (cops announce moves first)
@@ -203,6 +212,7 @@
 \slide{cops-and-robbers-A}
 \slide{cops-and-robbers-B}
 \slide{copwidth}
+%\cite{flipwidth2023}
 \slide{copwidth-A}
 \slide{copwidth-B}
 \slide{copwidth-C}
@@ -233,6 +243,7 @@
 
 % If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 \slide{order-algo-estimate}
+%\cite{Breen2023}
 %We use estimated backconnectivity -- restrict to shortest r-qualifying paths.
 %Mention that we get Catalan numbers?
 
@@ -253,13 +264,13 @@
 % Bibliography
 \setbeamercolor{background canvas}{bg=talk_bg}
 \begin{frame}[allowframebreaks]
-	\nocite{flipwidth}
+	\nocite{flipwidth2023}
 	\nocite{tree-like}
 	\nocite{treewidth-db}
 	\nocite{tree-diet}
 	\nocite{planar-street}
 	\nocite{planar-bio}
-	\nocite{ColoringHardness}
+	\nocite{Breen2023}
 	\nocite{Joret2022}
 	\nocite{Brown2020}
 	\nocite{Nesetril2012}
@@ -269,7 +280,12 @@
 	\nocite{vandenHeuvel2017}
 	\nocite{Demaine2019}
 	\nocite{dvovrak2022weighted}
+	\nocite{Dreier2022}
+	\nocite{Kierstead2020}
+	\nocite{Almulhim2022}
+	\nocite{Kierstead2003}
 	% TODO:BDS: add all bib entries 
+	\nocite{Nesetril2008}
 	\printbibliography
 \end{frame}
 
