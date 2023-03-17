@@ -42,7 +42,6 @@
 % Abstract. 
 %Over the last ten years, there has been significant work on adapting tools and techniques from structural graph algorithms for practical network analysis. One promising direction has arisen from the notion of bounded expansion, a broad notion of sparsity introduced by Nešetřil and Ossona de Mendez in 2012. Bounded expansion seems to exhibit a Goldilocks-like property of both encompassing many classes of real-world networks while still admitting (theoretically) efficient parameterized algorithms for many graph optimization problems. Taken together, this suggests that it may be a rich source of efficient algorithms for analyzing real-world networks. Further, bounded expansion includes many well-studied classes (e.g. bounded degree, H-minor-free, bounded crossing number) and can be characterized by – and thus relates – a plethora of independently interesting parameters (e.g. density of shallow minors, uniform quasi-wideness, and generalized coloring numbers). Many FPT algorithms take advantage of the inherent bounds on these parameters in bounded expansion classes in order to achieve polynomial runtimes. However, in order for these approaches to be practically useful, we must understand the computability of these parameters. Existing work implicitly relies on "good enough" approximations to claim the algorithms achieve fixed-parameter tractability – for example, a -approximation for -centered colorings. Unfortunately, the magnitude of the approximation factors inherently renders the approaches infeasible on real-world instances. In contrast, other parameters characterizing bounded expansion such as the generalized coloring numbers are not even known to be NP-hard to compute exactly. In this talk, we provide an overview of this space, including new results with Breen-McKay and Lavallee on the hardness and approximability of generalized coloring numbers – parameters of independent interest which were introduced by Kierstead and Yang in 2003. We also highlight several remaining open problems where affirmative answers could move the field significantly closer to achieving its practical potential.
 
-% Blair: Fix citations on all slides. 
 
 %Title 
 %TODO: Beautify slide. 
@@ -75,6 +74,7 @@
 %  -- References as [Name, Year, Short venue code]
 
 %Section Header 
+%TODO: Consider another image - I don't understand sculpture analogy here.
 \slide{title-sparsity}
 
 
@@ -85,7 +85,6 @@
 
 %Parameterized Complexity - quick recap of definitions/motivation
 \slide{fpt}
-
 
 % -- TODO: Replace BE by crossed-out shallow minor
 \slide{hierarchy-labeled}
