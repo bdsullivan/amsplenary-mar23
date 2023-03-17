@@ -39,10 +39,14 @@
 % Abstract. 
 %Over the last ten years, there has been significant work on adapting tools and techniques from structural graph algorithms for practical network analysis. One promising direction has arisen from the notion of bounded expansion, a broad notion of sparsity introduced by Nešetřil and Ossona de Mendez in 2012. Bounded expansion seems to exhibit a Goldilocks-like property of both encompassing many classes of real-world networks while still admitting (theoretically) efficient parameterized algorithms for many graph optimization problems. Taken together, this suggests that it may be a rich source of efficient algorithms for analyzing real-world networks. Further, bounded expansion includes many well-studied classes (e.g. bounded degree, H-minor-free, bounded crossing number) and can be characterized by – and thus relates – a plethora of independently interesting parameters (e.g. density of shallow minors, uniform quasi-wideness, and generalized coloring numbers). Many FPT algorithms take advantage of the inherent bounds on these parameters in bounded expansion classes in order to achieve polynomial runtimes. However, in order for these approaches to be practically useful, we must understand the computability of these parameters. Existing work implicitly relies on "good enough" approximations to claim the algorithms achieve fixed-parameter tractability – for example, a -approximation for -centered colorings. Unfortunately, the magnitude of the approximation factors inherently renders the approaches infeasible on real-world instances. In contrast, other parameters characterizing bounded expansion such as the generalized coloring numbers are not even known to be NP-hard to compute exactly. In this talk, we provide an overview of this space, including new results with Breen-McKay and Lavallee on the hardness and approximability of generalized coloring numbers – parameters of independent interest which were introduced by Kierstead and Yang in 2003. We also highlight several remaining open problems where affirmative answers could move the field significantly closer to achieving its practical potential.
 
-%Title - needs updating to match style (whatever that ends up being), have correct title, event, and date
-%TODO: One idea I had about "hard look at generalized coloring numbers" was that a diamond is hard, and can act as a prism which 
-%creates a rainbow -- maybe having one casting multicolor light onto a graph would be a neat title image? Low priority, all things considered. 
+%Title 
+%TODO: Beautify slide. 
+% Idea: a diamond is hard, and can act as a prism which %creates a rainbow -- maybe having a platypus peering through one, which is casting multicolor light onto a graph? Low priority, all things considered. 
 \slide{title}
+
+% Acknowledgements 
+% TODO: Update to just be Felix + Moore Foundation
+\slide{thanks}
 
 
 % [10 mins] on FPT, structural graph theory -> bounded expansion
@@ -122,7 +126,7 @@
 % FR: This could be an example of a wcol-based algorithm. Important here:
 %     computing a good wcol ordering is the first and maybe most important step
 %     for a fast algorithm
-% FR: We probably want to replace the "Magic hammer" by something more fitting 
+% FR: We probably want to replace the "Magic hammer" by something more fitting -- ideas? A rainbow? 
 
 %Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
 %TODO: Add citation 
@@ -256,11 +260,8 @@
 % What is the asymptotics of the maximum of wcolr(G) when G is planar? It
 %is known to be Ω(r2 log r) and O(r3). Joret et al conjecture Θ(r^2 log r); Pilipczuk et al think maybe via Koebe orderings - is it true  wcold(G, 􏰒) \leq  d^3 · ln^O(1) d for every Koebe order?
 
-% Acknowledgements - have to decide whether to do at beginning or end 
-% TODO: Update this to match talk.
-\slide{thanks}
 
-%Advertise for ACDA23? 
+%Advertise for ACDA23? Maybe on a "Thanks" slide?
 %This is a slide I can make if I decide I want it.
 
 % Bibliography
