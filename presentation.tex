@@ -2,6 +2,9 @@
 \input{preamble}
 
 \usepackage[style=alphabetic]{biblatex}
+\usepackage{lato} % FR: You might have to install this!
+
+
 \AtBeginBibliography{\footnotesize}
 
 \DeclareLabelalphaTemplate{
@@ -281,7 +284,7 @@
 
 % Bibliography
 \setbeamercolor{background canvas}{bg=talk_bg}
-\begin{frame}
+\begin{frame}[allowframebreaks]
 	\nocite{flipwidth}
 	\nocite{tree-like}
 	\nocite{treewidth-db}
