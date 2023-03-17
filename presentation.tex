@@ -243,16 +243,18 @@
 %Point out that all the poly-time algorithms work just as well with any approximation (though the runtimes really suffer)
 % Dvorak's bounds (weak and strong)
 
-%New greedy algorithm based on admissibility gives improved approximation. 
-%This likely needs several slides - based on estimated backconnectivity. 
-%Mention that we get Catalan numbers?
 \todoslide{A Greedy Approach}
+% If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 
 % Definition of Admissibility - do I really need these / is this the right place for them? Probably, since we use a disjoint set of shortest paths in order to get our approximation to go through.
 \slide{be-adm}
 \slide{be-adm-A}
 \slide{be-adm-B} 
 
+\todoslide{When all fails, estimate!}
+%We use estimated backconnectivity -- restrict to shortest r-qualifying paths.
+%Mention that we get Catalan numbers?
+% Use same visuals as degeneracy slides
 
 %Is there a nice visual element to be used here?
 \todoslide{Open Problems} 
