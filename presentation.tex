@@ -47,10 +47,10 @@
 %Title 
 %TODO: Beautify slide. 
 % Idea: a diamond is hard, and can act as a prism which %creates a rainbow -- maybe having a platypus peering through one, which is casting multicolor light onto a graph? Low priority, all things considered. 
+%BS: There's a diamond in the images folder now.
 \slide{title}
 
 % Acknowledgements 
-% TODO: Update to just be Felix + Moore Foundation
 \slide{thanks}
 
 
@@ -74,20 +74,16 @@
 % Reference slide!
 %  -- References as [Name, Year, Short venue code]
 
-% \todoslide{Section: Sparse graph theory}
+%Section Header 
 \slide{title-sparsity}
-%Bringing structural graph algorithms to real-world data analysis
 
 
-%% Wide gap between theoretical results and real-world data analysis - planets analogy; platypus in spaceship?
-
+%% Wide gap between theoretical results and real-world data analysis 
 \slide{theory-vs-practice}
-
 \slide{many-worlds}
 
 
 %Parameterized Complexity - quick recap of definitions/motivation
-% TODO -- Let's use the SLC Whale 'Out of the Blue' as the new sculpture! It's really controversial here, and a great talking point.
 \slide{fpt}
 
 
@@ -98,8 +94,9 @@
 % Lots of interest in using structure and sparsity to design efficient algorithms, but also lots of evidence that existing parameters are typically too big in realistic networks. 
 %BDS: Didn't quite get to making slide outline(s) for this, but did organize the content a bit. Leaning towards keeping it on the short side - I have a lot of material to fit in. Do you think it works on one slide? Or do we need two? 
 
-%Blair - work on plane - Starting from unreal-structure SVGS; 
-
+%TODO:BDS: Add citations, get rid of dark layout on second slide.
+\slide{unreal-structure}
+\slide{unreal-structure-a}
 %Treewidth 
 %This paper argues that treewidth is super useful in biology, but networks have prohibitively high treewidth.
 %https://almob.biomedcentral.com/articles/10.1186/s13015-022-00213-z might have some pointers? Also I need to read this! 
@@ -110,14 +107,14 @@
 %     this one is a bit more social-sciency (https://journals.sagepub.com/doi/pdf/10.1177/2399808318802941?casa_token=AYfYJzbcxRIAAAAA:Hoi86T72xpKBlK_ntr-5pQRhxzQ6hzXrM8rUiFjYKy_FY1soOAWwSpQbqKZ9hpv12UWRbvSWn5I)
 % FR: Planarization of biological networks (https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9669815&casa_token=Q7pDQ0KMis4AAAAA:p7lFIY2FZ3wiJVpzIOAMLFaDS2SaJ97du4Q1vRfRaT75KozwMlizUXzf8Zrf94mC1LZYnpqyOIc&tag=1)
 
+
+% BS: Not sure these fit in the current pitch?
 %Near-Cliques in c-closed classes (Jain et al) - this one is a bit more of a stretch, and not on the hierarchy; on the other hand, Shweta is my postdoc and on the job market (in CS), so.... 
 %https://arxiv.org/abs/2007.09768
+% Pal, Irene and Felix: "Harmless Set" which is inspired by networks questions https://arxiv.org/abs/2111.11834
 
-% BS: Not sure this fits in the current pitch?
-% FR: Pal, Irene and I did some work on "Harmless Set" which is inspired by networks questions https://arxiv.org/abs/2111.11834
-
-% -- TODO: Replace BE by crossed-out shallow minor
-% -- TODO: Highlight Bounded Expansion & put it in the "Goldilocks Zone" 
+% TODO: Replace BE by crossed-out shallow minor
+% TODO: Highlight Bounded Expansion & put it in the "Goldilocks Zone" 
 \slide{hierarchy-sparse}
 
 %Recent work has shown that bounded expansion may be in the ``goldilocks'' zone  - define in terms of shallow minors, mention Nesetril/Ossona de Mendez, show connection to other well-known structural graph classes via hierarchy, mention connections to uniform quasi-wideness, p-centered colorings. 
@@ -126,12 +123,11 @@
 \slide{be-shallow-B}
 
 %Evidence that BE exists in random graph models 
-%TODO: Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
+%TODO:BDS: Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
 \slide{random-models}
 
-%Algorithmically useful 
-%What can you do in bounded expansion classes? Mention theoretical results + Mandoline, SpaceGraphCats, etc. 
-%TODO: Fix citation to standard style for this talk 
+%TODO:BDS: Fix citation to standard style for this talk 
+%Algorithmically useful, lots of characterizations
 \slide{be-overview}
 \slide{be-applications}
 
@@ -140,21 +136,16 @@
 % FR: This could be an example of a wcol-based algorithm. Important here:
 %     computing a good wcol ordering is the first and maybe most important step
 %     for a fast algorithm
-% FR: We probably want to replace the "Magic hammer" by something more fitting -- ideas? A rainbow? 
-
+%TODO: replace Magic Hammer by something more fitting? (idea: rainbow??)
 %Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
-%TODO: Add citation 
+%TODO:BDS: Add citation 
 \slide{wcol-counting}
 
-% Blair - on plane 
-%One slide on using bounded-expansion + domsets for gene neighborhoods. I may have something - will look. 
-% Starting point is spacegraphcats.svg - needs retitling, maybe another small tweak, but I'm just going to use it to point to real application work (and Taylor's new preprint on IBD is super cool).
-% TODO: Add citation 
-\todoslide{SpaceGraphCats}
+%TODO:BDS: Change title, add citation, mention IBD work? Tweak graphics if needed. 
+\slide{spacegraphcats}
 
-%BS: I'm not sold on these divider slides given the talk organization, but we'll see; maybe you have some idea for what they could look like.
+%Section header 
 \slide{title-coloring-numbers}
-% \todoslide{Section: Generalized Coloring Numbers - what they are and why you should care, beyond BE}
 
 %Definition of generalized coloring numbers 
 %Strong
@@ -165,14 +156,9 @@
 \slide{be-wcol}
 \slide{be-wcol-A}
 \slide{be-wcol-B}
-%TODO: scolr(G) ≤ wcolr(G) ≤ (scolr(G))^r.
-
-%BS: See SlideSketches PDF for distillation and imagery suggestions on all of these. 
+%TODO: Need to add observation that scolr(G) ≤ wcolr(G) ≤ (scolr(G))^r.
 
 %TODO: decide if degeneracy definition is needed.
-% Originally introduced by Kierstead & Yang (Order 2003)
-% Generalizes coloring number (define)
-% Relates to chromatic number, list coloring), star and acyclic chromatic numbers via greedy coloring avoiding 1 and 2-reachesX
 \slide{origin-story}
 \slide{origin-story-A}
 \slide{origin-story-B}
@@ -185,8 +171,7 @@
 \slide{games-A}
 
 
-% Blair: Fill in all text and math on the plane for the following three 
-
+% TODO:BDS: Add text from Sketch 
 % Some recent work on generalized coloring numbers in special classes 
 % https://www.sciencedirect.com/science/article/pii/S0012365X21003447 (Almuhim, Kierstead 2022 Discrete Math; may not include this, but weak-2 on planar has been a big push: best known is 23 now -> star list chromatic number; conjecture is 18)
 %https://arxiv.org/abs/2201.09340 (Nederlov, Pilipczuk, Wegrzycki - planar via Koebe orderings/coin models ArXiv 2022), 
@@ -197,37 +182,27 @@
 \slide{planarity}
 
 
+%TODO: Beautify 
 \slide{uniform-orderings}
-% \todoslide{One Ring to Rule Them}
 % Uniform Orderings for multiple radii simultaneously
 %https://arxiv.org/abs/1907.12149
  %https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359 
  % van den Heuvel, Kierstead, EuJC 2021
 
 
-% Not planning to include: Connections to posets 
-% Streib and Trotter [24] proved that every poset whose cover graph is planar, has dimension bounded by a function of its height. Then Joret et al. [9] used generalized coloring numbers to prove that every monotone graph class G is nowhere dense if and only if for every integer h ≥ 1 and real number epsilon > 0, every n-element poset of height at most h whose cover graph is in G has dimension O(n^epsilon).
-
-% \todoslide{Twinwidth (twice the fun, half the sleep)}
+%TODO: Beautify
 \slide{twinwidth}
 %https://arxiv.org/abs/2104.09360 
 %https://www.sciencedirect.com/science/article/abs/pii/S0012365X21004593
 %Dreier et al Discrete Math 2022
-%twin-width graph parameter (don't define)
 %Observe (out loud) that recently work addresses many structural and algorithmic questions such as FPT model checking, graph enumeration, graph coloring, matrices and ordered graphs, and transductions of permutations.
-% Known: graph class with bounded twin-width excludes some biclique as a subgraph if and only if it has bounded expansion [Do I need this??]
-% Bonnet et al SODA 2021) non-constructive exponential upper bounds
-% Main result: a graph G with no Ks,s-subgraph and twin-width d has scolr(G) ≤ (d^r + 3)s and one can choose G such that scolr(G) ≥ (d−4)^rs. Similar exponential upper bounds for wcol and adm. 
+%Similar exponential upper bounds for wcol and adm. 
 
 
-%TODO: Make sure we're happy with citation format 
-% \todoslide{Cops and Robbers}
-%Slide image: platypus robber, maybe with a speed limit sign for the variant??
-%Recent work characterizing coloring numbers using Cops & Robbers-style game 
+%TODO:BDS: check citation format
 %https://arxiv.org/abs/2302.00352
-% Toruńczyk ArXiv 2023 
-%Cop-Width Game: robber runs at speed r, for some fixed r ∈ N ∪ {∞}. That is, in each round, after the cops have taken off in their helicopters to their new positions, which are known to the robber, and before the helicopters have landed, the robber may traverse a path of length at most r that does not run through a cop that remains on the ground (he may also stay put). We call this game the cop-width game with radius r and width k, if there are k cops, and the robber can run at speed r. Obs: copwidth1(G) = degeneracy(G) + 1. (note to self: minimax thm comes from fact that every graph G is either d-degenerate, or it has a subgraph H in which every vertex has degree larger than d.)
-%Main Result: admr (G) + 1 leq copwidthr (G) leq wcol2r (G) + 1.
+%TODO:BDS: make sure you understand the rules of the game.
+%Cop-Width Game: robber runs at speed r, for some fixed r ∈ N ∪ {∞}. That is, in each round, after the cops have taken off in their helicopters to their new positions ***which are known to the robber***, and before the helicopters have landed, the robber may traverse a path of length at most r that does not run through a cop that remains on the ground (he may also stay put). We call this game the cop-width game with radius r and width k, if there are k cops, and the robber can run at speed r. Obs: copwidth1(G) = degeneracy(G) + 1. (note to self: minimax thm comes from fact that every graph G is either d-degenerate, or it has a subgraph H in which every vertex has degree larger than d.)
 % There is a variant with exact min-max theorem (cops announce moves first)
 % Leads to admr (G) + 1 leq  copwidthr′ (G) leq  scolr (G) + 1
 % Basically also studied in Richerby & Thilikos WG 2008 and Limnios et al TCS 2020 but without connections to coloring numbers 
@@ -239,59 +214,50 @@
 \slide{copwidth-B}
 \slide{copwidth-C}
 
+
 % Motivated from cops & robbers
 % -- "Interpolate" between degeneracy and td/tw
-% -- Degeneracy as "practical" parameter (netsci), td/tw as "theoretical"
+% -- Degeneracy as "practical" parameter (netsci), td/tw as "theoretical" - should we add the planets here?
 %TODO: Can we annotate this with known hardness (maybe on a reveal slide)? 
 \slide{col-wcol-td-tw} 
 
-%BS: Still not sold, but reserving judgement.
 \slide{title-algorithmic}
 
-% FR: Degeneracy algorithm somewhere here (animation)
 % BS: note that this gives the cops strategy in the copwidth1 case (v + its d back-nbrs)
 \slide{degeneracy-computation}
 \slide{degeneracy-computation-A}
 \slide{degeneracy-computation-B}
+
+%TODO: Add property about number of back-neighbors. 
 \slide{degeneracy-computation-C}
 
-% Cite Breen-McKay, Lavallee, Sullivan, EuJC 2023 (In Press)
+%TODO: Add citation Breen-McKay, Lavallee, Sullivan, EuJC 2023 (In Press)
 \slide{hardness}
-%Negative result: NP-hard to compute (weak and strong, all radii)
 
-% \todoslide{When all else fails, approximate!}
+%TODO: Are these the right bounds for Dvorak??? We should have improved his approximation algorithm.
 \slide{order-approx}
-%End of the road? No - an approximation is good enough! 
-%Point out that all the poly-time algorithms work just as well with any approximation (though the runtimes really suffer)
-% Dvorak's bounds (weak and strong)
-fo
-
 % If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 
-% \todoslide{When all fails, estimate!}
 \slide{order-algo-estimate}
 %We use estimated backconnectivity -- restrict to shortest r-qualifying paths.
 %Mention that we get Catalan numbers?
-% Use same visuals as degeneracy slides
 
-% Felix will create a placeholder with white question boxes and places for three images.
-%Blair - write up these problems nicely 
+%TODO:BDS: Add open questions, and images for three categories (algorithms, bounds on classes, ??)
 \slide{open-questions} 
-
-%What's still open? 
 % Any Constant-factor approximation (get rid of the k)
 % FR: We don't have any bounds/algorithm specifically for _networks_
 % Are game coloring numbers algorithmicall useful? (only known result is for a Bollobas-Eldridge type packing problem via Kierstead and Kostochka)
 % What is the asymptotics of the maximum of wcolr(G) when G is planar? It
 %is known to be Ω(r2 log r) and O(r3). Joret et al conjecture Θ(r^2 log r); Pilipczuk et al think maybe via Koebe orderings - is it true  wcold(G, 􏰒) \leq  d^3 · ln^O(1) d for every Koebe order?
 
+%BS: I saw this in your deck and almost asked for it :) 
 \slide{thanks-end}
 
-%Advertise for ACDA23? Maybe on a "Thanks" slide?
+%Advertise for ACDA23? 
 %This is a slide I can make if I decide I want it.
 
-% Blair - add all bib entries 
-
+% TODO:BDS: add all bib entries 
+% TODO: Make this display things on slide.
 % Bibliography
 \setbeamercolor{background canvas}{bg=talk_bg}
 \begin{frame}[allowframebreaks]
