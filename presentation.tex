@@ -121,10 +121,8 @@
 \slide{be-shallow-B}
 
 %Evidence that BE exists in random graph models 
-%TODO:BDS: Need to cite https://www.sciencedirect.com/science/article/pii/S0022000019300418
 \slide{random-models}
 
-%TODO:BDS: Fix citation to standard style for this talk 
 %Algorithmically useful, lots of characterizations
 \slide{be-overview}
 \slide{be-applications}
@@ -136,10 +134,9 @@
 %     for a fast algorithm
 %TODO: replace Magic Hammer by something more fitting? (idea: rainbow??)
 %Algorithmic pipeline is based on computing an ordering of V(G) with special properties 
-%TODO:BDS: Add citation 
 \slide{wcol-counting}
 
-%TODO:BDS: Change title, add citation, mention IBD work? Tweak graphics if needed. 
+%TODO:BDS: Mention IBD work? 
 \slide{spacegraphcats}
 
 %Section header 
@@ -154,14 +151,13 @@
 \slide{be-wcol}
 \slide{be-wcol-A}
 \slide{be-wcol-B}
-%TODO: Need to add observation that scolr(G) ≤ wcolr(G) ≤ (scolr(G))^r.
+%TODO:FR: Need to add observation that scolr(G) ≤ wcolr(G) ≤ (scolr(G))^r.
 
 %TODO: decide if degeneracy definition is needed.
 \slide{origin-story}
 \slide{origin-story-A}
 \slide{origin-story-B}
 
-%Do I need degeneracy here? 
 %\slide{degeneracy}
 
 %Connections with game chromatic number 
@@ -197,7 +193,6 @@
 %Similar exponential upper bounds for wcol and adm. 
 
 
-%TODO:BDS: check citation format
 %https://arxiv.org/abs/2302.00352
 %TODO:BDS: make sure you understand the rules of the game.
 %Cop-Width Game: robber runs at speed r, for some fixed r ∈ N ∪ {∞}. That is, in each round, after the cops have taken off in their helicopters to their new positions ***which are known to the robber***, and before the helicopters have landed, the robber may traverse a path of length at most r that does not run through a cop that remains on the ground (he may also stay put). We call this game the cop-width game with radius r and width k, if there are k cops, and the robber can run at speed r. Obs: copwidth1(G) = degeneracy(G) + 1. (note to self: minimax thm comes from fact that every graph G is either d-degenerate, or it has a subgraph H in which every vertex has degree larger than d.)
@@ -216,7 +211,7 @@
 % Motivated from cops & robbers
 % -- "Interpolate" between degeneracy and td/tw
 % -- Degeneracy as "practical" parameter (netsci), td/tw as "theoretical" - should we add the planets here?
-%TODO: Can we annotate this with known hardness (maybe on a reveal slide)? 
+%TODO:FR: Can we annotate this with known hardness (maybe on a reveal slide)? 
 \slide{col-wcol-td-tw} 
 
 \slide{title-algorithmic}
@@ -226,13 +221,12 @@
 \slide{degeneracy-computation-A}
 \slide{degeneracy-computation-B}
 
-%TODO: Add property about number of back-neighbors. 
+%TODO:FR: Add property about number of back-neighbors. 
 \slide{degeneracy-computation-C}
 
-%TODO: Add citation Breen-McKay, Lavallee, Sullivan, EuJC 2023 (In Press)
 \slide{hardness}
 
-%TODO: Are these the right bounds for Dvorak??? We should have improved his approximation algorithm.
+%TODO:??: Are these the right bounds for Dvorak??? We should have improved his approximation algorithm.
 \slide{order-approx}
 % If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 
