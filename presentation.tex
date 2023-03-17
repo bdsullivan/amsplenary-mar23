@@ -151,7 +151,7 @@
 \slide{be-wcol}
 \slide{be-wcol-A}
 \slide{be-wcol-B}
-%TODO:FR: Need to add observation that scolr(G) ≤ wcolr(G) ≤ (scolr(G))^r.
+\slide{be-wcol-col}
 
 %TODO: decide if degeneracy definition is needed.
 \slide{origin-story}
@@ -176,8 +176,8 @@
 \slide{planarity}
 
 
-%TODO: Beautify 
 \slide{uniform-orderings}
+\slide{uniform-orderings-A}
 % Uniform Orderings for multiple radii simultaneously
 %https://arxiv.org/abs/1907.12149
  %https://www.sciencedirect.com/science/article/abs/pii/S0195669820301359 
@@ -226,10 +226,12 @@
 
 \slide{hardness}
 
-%TODO:??: Are these the right bounds for Dvorak??? We should have improved his approximation algorithm.
+%T-DO:??: Are these the right bounds for Dvorak??? We should have improved his approximation algorithm.
+% FR: Fixed, they are incorrect in you paper though (unless I was too tired).
+% TODO: Add citations. Note that wcol_r bound is from a more recent paper (dvovrak2022weighted), it was published on arxiv in '21
 \slide{order-approx}
-% If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 
+% If you could compute admissibility (r-path packing), greedy would work here like in degeneracy, unfortunately this is not computationally feasible. 
 \slide{order-algo-estimate}
 %We use estimated backconnectivity -- restrict to shortest r-qualifying paths.
 %Mention that we get Catalan numbers?
@@ -266,6 +268,7 @@
 	\nocite{vandenHeuvel2021}
 	\nocite{vandenHeuvel2017}
 	\nocite{Demaine2019}
+	\nocite{dvovrak2022weighted}
 	% TODO:BDS: add all bib entries 
 	\printbibliography
 \end{frame}
